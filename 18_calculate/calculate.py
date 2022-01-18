@@ -26,3 +26,14 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3)
         
     """
+    operations = {
+        'add' : a+b,
+        'subtract' : a-b,
+        'multiply' : a*b,
+        'divide' : a/b
+    }
+    if operations[operation]:
+        if make_int:
+            return message + f" {round(operations[operation])}"
+        else:
+            return message + f" {operations[operation]}"

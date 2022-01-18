@@ -5,7 +5,27 @@ def list_manipulation(lst, command, location, value=None):
     - command: command, either "remove" or "add"
     - location: location to remove/add, either "beginning" or "end"
     - value: when adding, value to add
+    """
+    if command == 'remove':
+        if location == 'beginning':
+            return lst.pop(0)
+        elif location == 'end':
+            return lst.pop()
+        else:
+            return None
+    elif command == 'add':
+        if location == 'beginning':
+            lst.insert(0, value)
+            return lst
+        elif location == 'end':
+            lst.insert(len(lst), value)
+            return lst
+        else:
+            return None
+    else:
+        return None
 
+    """
     remove: remove item at beginning or end, and return item removed
 
         >>> lst = [1, 2, 3]
@@ -40,3 +60,4 @@ def list_manipulation(lst, command, location, value=None):
         >>> list_manipulation(lst, 'add', 'dunno') is None
         True
     """
+
