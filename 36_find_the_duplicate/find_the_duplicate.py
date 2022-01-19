@@ -13,3 +13,12 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    i = 0
+    while i < len(nums):
+        u = i+1
+        while u < len(nums):
+            if nums[i]==nums[u]:
+                return nums[i]
+            u += 1
+        i += 1
+    return None
